@@ -142,39 +142,39 @@ section {
   min-height: calc(100vh-6.5rem);
 }
 
-.image {
+.home .image {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 42rem;
           flex: 1 1 42rem;
   text-align: center;
 }
 
-.image img {
+.home .image img {
   height: 50rem;
   width: 50rem;
   border-radius: 30% 70% 70% 30%/30% 30% 70% 70%;
 }
 
-.content {
+.home .content {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 42rem;
           flex: 1 1 42rem;
 }
 
-.content h3 {
+.home .content h3 {
   color: white;
   font-size: 4rem;
   padding-bottom: 0.5rem;
 }
 
-.content span {
+.home .content span {
   font: size 3rem;
   color: crimson;
   padding: 0.5rem 0;
   display: block;
 }
 
-.content p {
+.home .content p {
   font-size: 1.5rem;
   color: #aaa;
   line-height: 2;
@@ -252,7 +252,7 @@ section {
       -ms-flex: 1 1 20rem;
           flex: 1 1 20rem;
   padding: 2rem 4rem;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   background: #1a1a1a;
   -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.7);
           box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.7);
@@ -283,7 +283,7 @@ section {
   text-align: center;
   -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.7);
           box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.7);
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   background: #1a1a1a;
   -ms-flex-line-pack: stretch;
       align-content: stretch;
@@ -348,7 +348,7 @@ section {
   font-size: 1.7rem;
   color: white;
   border-radius: 5rem;
-  padding: .5rem 1.5rem;
+  padding: 0.5rem 1.5rem;
   background: #1a1a1a;
 }
 
@@ -420,8 +420,8 @@ section {
   padding: 2rem;
   -webkit-transform: translateY(-100%);
           transform: translateY(-100%);
-  -webkit-transition: .2s linear;
-  transition: .2s linear;
+  -webkit-transition: 0.2s linear;
+  transition: 0.2s linear;
 }
 
 .portfolio .box-container .box .content h3 {
@@ -436,6 +436,66 @@ section {
   font-size: 1.4rem;
   line-height: 2;
   color: black;
+}
+
+.blogs .box-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(31rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(31rem, 1fr));
+  /*1fr 1fr 1fr 1fr 1fr;*/
+  gap: 1.5rem;
+}
+
+.blogs .box-container .box {
+  text-align: center;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  background: #1a1a1a;
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.7);
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.7);
+}
+
+.blogs .box-container .box:hover .image img {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.blogs .box-container .box .image {
+  height: 25rem;
+  width: 100%;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.blogs .box-container .box .image img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-transition: 0.2s linear;
+  transition: 0.2s linear;
+}
+
+.blogs .box-container .box .content .icons {
+  position: relative;
+  top: -1rem;
+  border-radius: .5rem;
+  display: inline-block;
+  padding: 1.5rem;
+  background: black;
+}
+
+.blogs .box-container .box .content h3 {
+  font-size: 2rem;
+  color: white;
+}
+
+.blogs .box-container .box .content p {
+  font-size: 1.5rem;
+  color: #aaa;
+  padding: 1rem 0;
+  line-height: 2;
 }
 
 @media (max-width: 1200px) {
