@@ -19,10 +19,12 @@ $box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.7);
 
 @mixin grid($val) {
   display: grid;
-  grid-template-columns:1fr 1fr 1fr 1fr 1fr;
-  /*repeat(auto-fit,minmax($val,1fr));*/
-  gap:2rem;
+  grid-template-columns:repeat(auto-fit,minmax($val,1fr));
+  /*1fr 1fr 1fr 1fr 1fr;*/
+  
+  gap:1.5rem;
 }
+
 
 html {
   font-size: 62.5%;
@@ -239,7 +241,7 @@ section {
 .skills{
 
 .box-container{
-  @include grid(12rem);
+  @include grid(25rem);
 
   .box{
     padding:2rem;
@@ -271,6 +273,116 @@ section {
   }
 }
 
+}
+
+.education{
+  .box-container{
+    display: flex;
+    flex-wrap: wrap;
+    
+    .box{
+      flex: 1 1 40rem;
+      margin-left: 2rem;
+      padding-bottom: 0;
+      padding-top: 0;
+      padding-left: 3.5rem;
+      padding-bottom: 3rem;
+      border-left:.1rem solid $light-color ;
+      position: relative;
+
+      i{
+        height: 4.5rem;
+        width: 4.5rem;
+        line-height: 4.5rem;
+        font-size: 1.7rem;
+        border-radius: 50%;
+        background: $crimson;
+        color: $white;
+        text-align: center;
+        position: absolute;
+        top: -1rem;
+        left:-2.5rem ;
+      }
+
+      span{
+        font-size: 1.7rem;
+        color: $white;
+        border-radius: 5rem;
+        padding: .5rem 1.5rem;
+        background: $light-bg;
+      }
+
+      h3{
+        font-size:2rem;
+        padding: 1rem 0;
+        color: $white;
+        font-weight: normal;
+        padding-top: 3rem;
+      }
+
+      p{
+        font-size: 1.5rem;
+        color: $light-color;
+        line-height: 2;
+      }
+    }
+  }
+}
+
+.portfolio{
+  text-align: center;
+  .box-container{
+    @include grid(31rem);
+     
+    
+    .box{
+      height: 30rem;
+      overflow: hidden;
+      position: relative;
+      &:hover .content{
+         transform:translateY(0);
+      } 
+
+      img{
+           height: 100%;
+           width: 100%;
+           object-fit: cover;  
+         }
+
+         .content{
+           position: absolute;
+           top: 0;
+           left: 0;
+           height: 100%;
+           width: 100%;
+           background: rgba(255,255,255,0.292);;
+           display: flex;
+           flex-flow: column;
+           align-items: center;
+           justify-content: center;
+           padding:2rem;
+           transform: translateY(-100%);
+           transition:.2s linear;
+
+           h3{
+             font-size:2.5rem;
+             color: $light-bg;
+             text-transform: uppercase;
+             font-weight: normal;
+           }
+
+           p{
+             padding: 1rem 0;
+             font-size: 1.4rem;
+             line-height: 2;
+             color: $black;
+           }
+
+           
+         }
+
+    }
+  }
 }
 
 @media (max-width: 1200px) {
